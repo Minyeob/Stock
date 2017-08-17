@@ -6,7 +6,7 @@ COMMING SOON PAGE
     * Set your date here  (YEAR, MONTH (0 for January/11 for December), DAY, HOUR, MINUTE, SECOND)
     * according to the GMT+0 Timezone
     **/
-    var launch = new Date(2015, 06, 14, 11, 00);
+    var launch = new Date(2017, 07, 29, 12, 00, 00);
     /**
     * The script
     **/
@@ -20,11 +20,11 @@ COMMING SOON PAGE
     function setDate(){
         var now = new Date();
         if( launch < now ){
-            days.html('<h1>0</H1><p>Day</p>');
-            hours.html('<h1>0</h1><p>Hour</p>');
-            minutes.html('<h1>0</h1><p>Minute</p>');
-            seconds.html('<h1>0</h1><p>Second</p>');
-            message.html('OUR SITE IS NOT READY YET...');
+            days.html('<h1>13</H1><p>Day</p>');
+            hours.html('<h1>2</h1><p>Hour</p>');
+            minutes.html('<h1>4</h1><p>Minute</p>');
+            seconds.html('<h1>35</h1><p>Second</p>');
+            message.html('<p>now</p>');
         }
         else{
             var s = -now.getTimezoneOffset()*60 + (launch.getTime() - now.getTime())/1000;
