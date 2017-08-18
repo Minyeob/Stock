@@ -6,30 +6,36 @@ COMMING SOON PAGE
     * Set your date here  (YEAR, MONTH (0 for January/11 for December), DAY, HOUR, MINUTE, SECOND)
     * according to the GMT+0 Timezone
     **/
-    var launch = new Date(2015, 06, 14, 11, 00);
+        //javascript에서 날짜를 입력할때는 07의 형태로 입력하지 않고, 7처럼 바로 사용한다.
+    var launch = new Date(2017, 7, 29, 12, 0, 0);
     /**
     * The script
     **/
     var message = $('#message');
+    console.log(message.innerHTML);
     var days = $('#days');
     var hours = $('#hours');
     var minutes = $('#minutes');
     var seconds = $('#seconds');
-    
+    var d=new Date();
+    document.getElementById("timer").innerHTML="asdadasda";
+
+
     setDate();
     function setDate(){
         var now = new Date();
         if( launch < now ){
-            days.html('<h1>0</H1><p>Day</p>');
-            hours.html('<h1>0</h1><p>Hour</p>');
-            minutes.html('<h1>0</h1><p>Minute</p>');
-            seconds.html('<h1>0</h1><p>Second</p>');
-            message.html('OUR SITE IS NOT READY YET...');
+            days.html('<h1>13</H1><p>Day</p>');
+            hours.html('<h1>2</h1><p>Hour</p>');
+            minutes.html('<h1>4</h1><p>Minute</p>');
+            seconds.html('<h1>35</h1><p>Second</p>');
+            message.html('<p>'+now+'</p>');
         }
         else{
             var s = -now.getTimezoneOffset()*60 + (launch.getTime() - now.getTime())/1000;
             var d = Math.floor(s/86400);
-            days.html('<h1>'+d+'</h1><p>Day'+(d>1?'s':''),'</p>');
+            //days.html('<h1>'+d+'</h1><p>Day'+(d>1?'s':''),'</p>');
+            days.html('<h1>else</h1>');
             s -= d*86400;
 
             var h = Math.floor(s/3600);
@@ -43,8 +49,9 @@ COMMING SOON PAGE
             seconds.html('<h1>'+s+'</h1><p>Second'+(s>1?'s':''),'</p>');
             setTimeout(setDate, 1000);
 
-            message.html('OUR SITE IS NOT READY YET, BUT WE ARE COMING SOON');
+            message.html('O');
         }
+        message.html('God God God');
     }
 })(jQuery);
 /******************************************************************************************************************************
@@ -70,7 +77,7 @@ ANIMATIONS
             $('*[data-animated]').addClass('animated');
         }
         function animated_contents() {
-            $(".animated:appeared").each(function (i) {
+            $('.animated:appeared').each(function (i) {
                 var $this    = $(this),
                     animated = $(this).data('animated');
 

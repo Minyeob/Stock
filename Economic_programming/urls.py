@@ -16,9 +16,11 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.views.generic import TemplateView
+from stock.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),   #Admin
-    url(r'^$', TemplateView.as_view(template_name="counter/Theme/index.html")), #Home
-    url(r'^ibk/', include('stock.urls', namespace='stock')),    #Stock App
+    #url(r'^$', TemplateView.as_view(template_name="counter/Theme/main.html")), #Home
+    url(r'^$', index), #Home
+    url(r'^stock/', include('stock.urls', namespace='stock')),    #Stock App
 ]
